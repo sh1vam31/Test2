@@ -11,19 +11,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'build again'
+                sh 'mvn clean package' 
             }
         }
 
         stage('test'){
             steps{
-                sh 'test again'
+                sh 'mvn test'
             }
         }
 
         stage('deploy'){
             steps{
-                sh 'deploy again'
+                sh './deploy.sh'
             }  
         }
     }
